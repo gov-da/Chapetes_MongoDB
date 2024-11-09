@@ -1,0 +1,59 @@
+use("chapetes");
+
+db.createCollection("clientes", {
+    validator: {
+      $jsonSchema: {
+        bsonType: "object",
+        required: ["id_cliente", "nombre", "num_cel", "detalle_domicilios"],
+        properties: {
+          id_cliente: {
+            bsonType: "int",
+          },
+          nombre: {
+            bsonType: "string",
+            minLength: 1,
+          },
+          num_cel: {
+            bsonType: "string",
+            pattern: "^[0-9]{10}$",
+          },
+          detalle_domicilios: {
+            bsonType: "array",
+            minItems: 1,
+            items: {
+              bsonType: "object",
+              required: ["id_domicilio", "calle", "num_casa", "colonia", "referencia"],
+              properties: {
+                id_domicilio: {
+                  bsonType: "int",
+                },
+                calle: {
+                  bsonType: "string",
+                  minLength: 1,
+                },
+                num_casa: {
+                  bsonType: "int",
+                },
+                colonia: {
+                  bsonType: "string",
+                  minLength: 1,
+                },
+                referencia: {
+                  bsonType: "string",
+                  minLength: 1,
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+  
+use("chapetes")
+db.clientes.createIndex(
+    { id_cliente: 1 },
+    { unique: true }
+)
+
+

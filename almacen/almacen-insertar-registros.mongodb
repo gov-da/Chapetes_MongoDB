@@ -1,0 +1,101 @@
+use("chapetes")
+
+db.almacen.insertMany([
+    {
+       "id_almacen": 1,
+       "cantidad": 50,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" },
+       "id_detalle_uso": [
+          { "id_detalle_uso": 1 },
+          { "id_detalle_uso": 2 },
+          { "id_detalle_uso": 11 },
+          { "id_detalle_uso": 16 }
+       ]
+    },
+    {
+       "id_almacen": 2,
+       "cantidad": 15,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Carnes" },
+       "id_detalle_uso": [
+          { "id_detalle_uso": 3 },
+          { "id_detalle_uso": 4 },
+          { "id_detalle_uso": 12 },
+          { "id_detalle_uso": 17 }
+       ]
+    },
+    {
+       "id_almacen": 3,
+       "cantidad": 5,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Carnes" },
+       "id_detalle_uso": [
+          { "id_detalle_uso": 5 },
+          { "id_detalle_uso": 6 },
+          { "id_detalle_uso": 13 },
+          { "id_detalle_uso": 18 }
+       ]
+    },
+    {
+       "id_almacen": 4,
+       "cantidad": 20,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" },
+       "id_detalle_uso": [
+          { "id_detalle_uso": 7 },
+          { "id_detalle_uso": 8 },
+          { "id_detalle_uso": 14 },
+          { "id_detalle_uso": 19 }
+       ]
+    },
+    {
+       "id_almacen": 5,
+       "cantidad": 6,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" },
+       "id_detalle_uso": [
+          { "id_detalle_uso": 9 },
+          { "id_detalle_uso": 10 },
+          { "id_detalle_uso": 15 },
+          { "id_detalle_uso": 20 }
+       ]
+    },
+    {
+       "id_almacen": 6,
+       "cantidad": 12,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" }
+    },
+    {
+       "id_almacen": 7,
+       "cantidad": 12,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" }
+    },
+    {
+       "id_almacen": 8,
+       "cantidad": 3,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Lácteos" }
+    },
+    {
+       "id_almacen": 9,
+       "cantidad": 5,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" }
+    },
+    {
+       "id_almacen": 10,
+       "cantidad": 5,
+       "magnitudes": { "medicion": "Pieza" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" }
+    },
+    {
+       "id_almacen": 11,
+       "cantidad": 2,
+       "magnitudes": { "medicion": "Kilogramo" },
+       "categoria_almacen": { "nombre_categoria": "Verduras" }
+    }
+ ]);
+ 

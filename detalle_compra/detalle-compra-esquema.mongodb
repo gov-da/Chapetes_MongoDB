@@ -1,0 +1,114 @@
+use("chapetes")
+
+db.createCollection("detalle_compra", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: [
+                "id_detalle_compra",
+                "id_almacen",
+                "cantidad",
+                "precio",
+                "magnitud",
+                "proveedor"
+            ],
+            properties: {
+                id_detalle_compra: {
+                    bsonType: "int",
+                },
+                id_almacen: {
+                    bsonType: "int",
+                },
+                cantidad: {
+                    bsonType: "int",
+                },
+                precio: {
+                    bsonType: "double",
+                },
+                magnitud: {
+                    bsonType: "object",
+                    items: {
+                        bsonType: "object",
+                        required: ["id_magnitud", "medicion"],
+                        properties: {
+                            id_magnitud: {
+                                bsonType: "int",
+                            },
+                            medicion: {
+                                bsonType: "string",
+                            }
+                        }
+                    },
+                },
+                proveedor: {
+                    bsonType: "object",
+                    items: {
+                        bsonType: "object",
+                        required: [
+                            "nombre_proveedor",
+                            "telefono",
+                            "tipo_proveedor",
+                            "domicilio"
+                        ],
+                        properties: {
+                            nombre_proveedor: {
+                                bsonType: "string",
+                                description: "Debe ser una cadena de texto"
+                            },
+                            telefono: {
+                                bsonType: "string",
+                                pattern: "^[0-9]{10}$",
+                            },
+                            tipo_proveedor: {
+                                bsonType: "object",
+                                items: {
+                                    bsonType: "object",
+                                    required: ["nombre_tipo", "descripcion"],
+                                    properties: {
+                                        nombre_tipo: {
+                                            bsonType: "string",
+                                        },
+                                        descripcion: {
+                                            bsonType: "string",
+                                        }
+                                    }
+                                },
+                            },
+                            domicilio: {
+                                bsonType: "object",
+                                required: ["calle", "numero", "colonia", "municipio"],
+                                properties: {
+                                    calle: {
+                                        bsonType: "string",
+                                    },
+                                    numero: {
+                                        bsonType: "int",
+                                    },
+                                    colonia: {
+                                        bsonType: "string",
+                                    },
+                                    municipio: {
+                                        bsonType: "string",
+                                    }
+                                }
+                            }
+                        }
+                    },
+                }
+            }
+        }
+    },
+    validationAction: "warn"
+});
+
+
+
+
+
+
+use("chapetes")
+
+db.detalle_compra.createIndex(
+    { id_detalle_compra: 1 },
+    { unique: true }
+)
