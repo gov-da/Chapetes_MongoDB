@@ -1,6 +1,6 @@
 use("chapetes")
 
-db.createCollection("detalle_compra1", {
+db.createCollection("detalle_compra", {
     validator: {
         $jsonSchema: {
             bsonType: "object",

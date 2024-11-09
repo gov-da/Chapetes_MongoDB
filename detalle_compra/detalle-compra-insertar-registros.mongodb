@@ -1,7 +1,7 @@
 use("chapetes")
 
 
-db.detalle_compra1.insertMany([
+db.detalle_compra.insertMany([
     {
         "id_detalle_compra": 1,
         "id_almacen": 1,
