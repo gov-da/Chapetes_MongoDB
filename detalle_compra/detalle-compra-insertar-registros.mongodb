@@ -1,12 +1,13 @@
 use("chapetes")
 
-db.detalle_compra.insertMany([
+
+db.detalle_compra1.insertMany([
     {
         "id_detalle_compra": 1,
         "id_almacen": 1,
         "cantidad": 8,
         "precio": 25.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -16,16 +17,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "El Guero",
                 "telefono": "3531235987",
-                "calle": "Vicente Guerrero",
-                "numero": 53,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Vicente Guerrero",
+                    "numero": "53",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -34,7 +35,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 1,
         "cantidad": 2,
         "precio": 25.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -44,16 +45,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "La cosecha del tío Pepe",
                 "telefono": "3539876543",
-                "calle": "Aldama",
-                "numero": 3,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Desechables",
-                        "descripcion": "Variedad de desechables"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Desechables",
+                    "descripcion": "Variedad de desechables"
+                },
+                "domicilio": {
+                    "calle": "Aldama",
+                    "numero": "3",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -62,7 +63,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 2,
         "cantidad": 3,
         "precio": 125.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -72,16 +73,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Carnicería el Pachiche",
                 "telefono": "3537654321",
-                "calle": "Don Bosco",
-                "numero": 157,
-                "colonia": "El Rincón",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Carnes",
-                        "descripcion": "Todo tipo de carnes, frescas y congeladas"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Carnes",
+                    "descripcion": "Todo tipo de carnes, frescas y congeladas"
+                },
+                "domicilio": {
+                    "calle": "Don Bosco",
+                    "numero": "157",
+                    "colonia": "El Rincón",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -90,7 +91,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 3,
         "cantidad": 1,
         "precio": 100.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -100,16 +101,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Carnicería el Pachiche",
                 "telefono": "3537654321",
-                "calle": "Don Bosco",
-                "numero": 157,
-                "colonia": "El Rincón",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Carnes",
-                        "descripcion": "Todo tipo de carnes, frescas y congeladas"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Carnes",
+                    "descripcion": "Todo tipo de carnes, frescas y congeladas"
+                },
+                "domicilio": {
+                    "calle": "Don Bosco",
+                    "numero": "157",
+                    "colonia": "El Rincón",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -118,7 +119,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 4,
         "cantidad": 12,
         "precio": 15.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -128,16 +129,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Alimentos Sanos",
                 "telefono": "3535566778",
-                "calle": "Emiliano Zapata",
-                "numero": 224,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Lácteos",
-                        "descripcion": "Productos lácteos como"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Lácteos",
+                    "descripcion": "Productos lácteos como"
+                },
+                "domicilio": {
+                    "calle": "Emiliano Zapata",
+                    "numero": "224",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -146,7 +147,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 4,
         "cantidad": 4,
         "precio": 14.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -156,16 +157,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Frutas y Verduras del Valle",
                 "telefono": "3531234567",
-                "calle": "Juarez",
-                "numero": 35,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Juarez",
+                    "numero": "35",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -174,7 +175,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 5,
         "cantidad": 5,
         "precio": 12.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -184,16 +185,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Frutas y Verduras del Valle",
                 "telefono": "3531234567",
-                "calle": "Juarez",
-                "numero": 35,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Juarez",
+                    "numero": "35",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -202,7 +203,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 6,
         "cantidad": 4,
         "precio": 15.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -212,16 +213,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Alimentos Sanos",
                 "telefono": "3535566778",
-                "calle": "Emiliano Zapata",
-                "numero": 224,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Lácteos",
-                        "descripcion": "Productos lácteos como"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Lácteos",
+                    "descripcion": "Productos lácteos como"
+                },
+                "domicilio": {
+                    "calle": "Emiliano Zapata",
+                    "numero": "224",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -230,7 +231,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 7,
         "cantidad": 6,
         "precio": 30.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -240,16 +241,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Frutas y Verduras del Valle",
                 "telefono": "3531234567",
-                "calle": "Juarez",
-                "numero": 35,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Juarez",
+                    "numero": "35",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -258,7 +259,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 7,
         "cantidad": 4,
         "precio": 30.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 5,
                 "medicion": "Pieza"
@@ -268,16 +269,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Productos Naturales",
                 "telefono": "3532233445",
-                "calle": "Constitución",
-                "numero": 147,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Constitución",
+                    "numero": "147",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -286,7 +287,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 8,
         "cantidad": 4,
         "precio": 80.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 5,
                 "medicion": "Pieza"
@@ -296,16 +297,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Comercializadora El Buen Sabor",
                 "telefono": "3534455667",
-                "calle": "Insurgentes",
-                "numero": 99,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Carnes",
-                        "descripcion": "Todo tipo de carnes, frescas y congeladas"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Carnes",
+                    "descripcion": "Todo tipo de carnes, frescas y congeladas"
+                },
+                "domicilio": {
+                    "calle": "Insurgentes",
+                    "numero": "99",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -314,7 +315,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 8,
         "cantidad": 10,
         "precio": 85.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -324,16 +325,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Alimentos Sanos",
                 "telefono": "3535566778",
-                "calle": "Emiliano Zapata",
-                "numero": 224,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Lácteos",
-                        "descripcion": "Productos lácteos como"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Lácteos",
+                    "descripcion": "Productos lácteos como"
+                },
+                "domicilio": {
+                    "calle": "Emiliano Zapata",
+                    "numero": "224",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -342,7 +343,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 8,
         "cantidad": 7,
         "precio": 82.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -352,16 +353,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Delicias Gourmet",
                 "telefono": "3533344556",
-                "calle": "Monterde",
-                "numero": 13,
-                "colonia": "Valle Verde",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Desechables",
-                        "descripcion": "Variedad de desechables"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Desechables",
+                    "descripcion": "Variedad de desechables"
+                },
+                "domicilio": {
+                    "calle": "Monterde",
+                    "numero": "13",
+                    "colonia": "Valle Verde",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -370,7 +371,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 9,
         "cantidad": 3,
         "precio": 20.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -380,16 +381,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Productos Naturales",
                 "telefono": "3532233445",
-                "calle": "Constitución",
-                "numero": 147,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Constitución",
+                    "numero": "147",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -398,7 +399,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 9,
         "cantidad": 4,
         "precio": 21.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -408,16 +409,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Frutas y Verduras del Valle",
                 "telefono": "3531234567",
-                "calle": "Juarez",
-                "numero": 35,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Verduras",
-                        "descripcion": "Todo tipo de verduras"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Verduras",
+                    "descripcion": "Todo tipo de verduras"
+                },
+                "domicilio": {
+                    "calle": "Juarez",
+                    "numero": "35",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -426,7 +427,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 9,
         "cantidad": 4,
         "precio": 20.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -436,16 +437,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Alimentos Sanos",
                 "telefono": "3535566778",
-                "calle": "Emiliano Zapata",
-                "numero": 224,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Lácteos",
-                        "descripcion": "Productos lácteos como"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Lácteos",
+                    "descripcion": "Productos lácteos como"
+                },
+                "domicilio": {
+                    "calle": "Emiliano Zapata",
+                    "numero": "224",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -454,7 +455,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 10,
         "cantidad": 8,
         "precio": 48.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -464,16 +465,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Abarrotera la Comercial",
                 "telefono": "3539988776",
-                "calle": "Michoacán",
-                "numero": 282,
-                "colonia": "Las Brisas",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Especias",
-                        "descripcion": "Diversos tipos de especias"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Especias",
+                    "descripcion": "Diversos tipos de especias"
+                },
+                "domicilio": {
+                    "calle": "Michoacán",
+                    "numero": "282",
+                    "colonia": "Las Brisas",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -482,7 +483,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 10,
         "cantidad": 4,
         "precio": 49.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -492,16 +493,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Abarrotera la Comercial",
                 "telefono": "3539988776",
-                "calle": "Michoacán",
-                "numero": 282,
-                "colonia": "Las Brisas",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Especias",
-                        "descripcion": "Diversos tipos de especias"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Especias",
+                    "descripcion": "Diversos tipos de especias"
+                },
+                "domicilio": {
+                    "calle": "Michoacán",
+                    "numero": "282",
+                    "colonia": "Las Brisas",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -510,7 +511,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 11,
         "cantidad": 5,
         "precio": 32.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -520,16 +521,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Comercializadora El Buen Sabor",
                 "telefono": "3534455667",
-                "calle": "Insurgentes",
-                "numero": 99,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Carnes",
-                        "descripcion": "Todo tipo de carnes, frescas y congeladas"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Carnes",
+                    "descripcion": "Todo tipo de carnes, frescas y congeladas"
+                },
+                "domicilio": {
+                    "calle": "Insurgentes",
+                    "numero": "99",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     },
@@ -538,7 +539,7 @@ db.detalle_compra.insertMany([
         "id_almacen": 11,
         "cantidad": 7,
         "precio": 30.00,
-        "magnitud": [
+        "magnitudes": [
             {
                 "id_magnitud": 1,
                 "medicion": "Kilogramo"
@@ -548,16 +549,16 @@ db.detalle_compra.insertMany([
             {
                 "nombre_proveedor": "Comercializadora El Buen Sabor",
                 "telefono": "3534455667",
-                "calle": "Insurgentes",
-                "numero": 99,
-                "colonia": "Centro",
-                "municipio": "Sahuayo",
-                "tipo_proveedor": [
-                    {
-                        "nombre_tipo": "Carnes",
-                        "descripcion": "Todo tipo de carnes, frescas y congeladas"
-                    }
-                ]
+                "tipo_proveedor": {
+                    "nombre_tipo": "Carnes",
+                    "descripcion": "Todo tipo de carnes, frescas y congeladas"
+                },
+                "domicilio": {
+                    "calle": "Insurgentes",
+                    "numero": "99",
+                    "colonia": "Centro",
+                    "municipio": "Sahuayo"
+                }
             }
         ]
     }

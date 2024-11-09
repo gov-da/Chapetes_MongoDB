@@ -1,6 +1,6 @@
 use("chapetes")
 
-db.createCollection("detalle_compra", {
+db.createCollection("detalle_compra1", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
@@ -26,7 +26,7 @@ db.createCollection("detalle_compra", {
                     bsonType: "double",
                 },
                 magnitud: {
-                    bsonType: "array",
+                    bsonType: "object",
                     items: {
                         bsonType: "object",
                         required: ["id_magnitud", "medicion"],
@@ -41,17 +41,14 @@ db.createCollection("detalle_compra", {
                     },
                 },
                 proveedor: {
-                    bsonType: "array",
+                    bsonType: "object",
                     items: {
                         bsonType: "object",
                         required: [
                             "nombre_proveedor",
                             "telefono",
-                            "calle",
-                            "numero",
-                            "colonia",
-                            "municipio",
-                            "tipo_proveedor"
+                            "tipo_proveedor",
+                            "domicilio"
                         ],
                         properties: {
                             nombre_proveedor: {
@@ -62,21 +59,8 @@ db.createCollection("detalle_compra", {
                                 bsonType: "string",
                                 pattern: "^[0-9]{10}$",
                             },
-                            calle: {
-                                bsonType: "string",
-
-                            },
-                            numero: {
-                                bsonType: "int",
-                            },
-                            colonia: {
-                                bsonType: "string",
-                            },
-                            municipio: {
-                                bsonType: "string",
-                            },
                             tipo_proveedor: {
-                                bsonType: "array",
+                                bsonType: "object",
                                 items: {
                                     bsonType: "object",
                                     required: ["nombre_tipo", "descripcion"],
@@ -89,6 +73,24 @@ db.createCollection("detalle_compra", {
                                         }
                                     }
                                 },
+                            },
+                            domicilio: {
+                                bsonType: "object",
+                                required: ["calle", "numero", "colonia", "municipio"],
+                                properties: {
+                                    calle: {
+                                        bsonType: "string",
+                                    },
+                                    numero: {
+                                        bsonType: "int",
+                                    },
+                                    colonia: {
+                                        bsonType: "string",
+                                    },
+                                    municipio: {
+                                        bsonType: "string",
+                                    }
+                                }
                             }
                         }
                     },
