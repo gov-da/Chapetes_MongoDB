@@ -1,0 +1,149 @@
+use("chapetes");
+
+db.clientes.insertMany([
+    {
+        "id_cliente": 1,
+        "nombre": "Juan Pérez Gómez",
+        "num_cel": "3531234567",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 1,
+                "calle": "Av. Juárez",
+                "num_casa": 101,
+                "colonia": "Centro",
+                "referencia": "Cerca de la plaza principal"
+            }
+        ]
+    },
+    {
+        "id_cliente": 2,
+        "nombre": "María López Hernández",
+        "num_cel": "3532345678",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 2,
+                "calle": "Calle Reforma",
+                "num_casa": 215,
+                "colonia": "Nochebuena",
+                "referencia": "Entre la tienda y la farmacia"
+            }
+        ]
+    },
+    {
+        "id_cliente": 3,
+        "nombre": "Carlos Martínez Rodríguez",
+        "num_cel": "3533456789",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 3,
+                "calle": "Calle Madero",
+                "num_casa": 123,
+                "colonia": "Jardines",
+                "referencia": "Frente al parque"
+            }
+        ]
+    },
+    {
+        "id_cliente": 4,
+        "nombre": "Laura Sánchez Pérez",
+        "num_cel": "3534567890",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 4,
+                "calle": "Calle Independencia",
+                "num_casa": 47,
+                "colonia": "Las Flores",
+                "referencia": "Cerca de la escuela"
+            }
+        ]
+    },
+    {
+        "id_cliente": 5,
+        "nombre": "Ana García López",
+        "num_cel": "3535678901",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 5,
+                "calle": "Calle Morelos",
+                "num_casa": 30,
+                "colonia": "Santa Fe",
+                "referencia": "A un lado de la iglesia"
+            }
+        ]
+    },
+    {
+        "id_cliente": 6,
+        "nombre": "José Ramírez Sánchez",
+        "num_cel": "3536789012",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 6,
+                "calle": "Calle 16 de Septiembre",
+                "num_casa": 78,
+                "colonia": "El Olmo",
+                "referencia": "Callejón del Olmo"
+            }
+        ]
+    },
+    {
+        "id_cliente": 7,
+        "nombre": "Elena Torres Jiménez",
+        "num_cel": "3537890123",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 7,
+                "calle": "Calle 5 de Febrero",
+                "num_casa": 89,
+                "colonia": "Las Palmas",
+                "referencia": "En el tercer piso"
+            }
+        ]
+    },
+    {
+        "id_cliente": 8,
+        "nombre": "Luis Herrera Morales",
+        "num_cel": "3538901234",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 8,
+                "calle": "Calle del Bosque",
+                "num_casa": 12,
+                "colonia": "La Esperanza",
+                "referencia": "Cerca del supermercado"
+            }
+        ]
+    },
+    {
+        "id_cliente": 9,
+        "nombre": "Sofía Fernández Ruiz",
+        "num_cel": "3539012345",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 9,
+                "calle": "Calle Hidalgo",
+                "num_casa": 65,
+                "colonia": "Los Árboles",
+                "referencia": "Frente a la gasolinera"
+            }
+        ]
+    },
+    {
+        "id_cliente": 10,
+        "nombre": "Pedro González Castillo",
+        "num_cel": "3530123456",
+        "detalle_domicilios": [
+            {
+                "id_domicilio": 10,
+                "calle": "Calle Miguel Hidalgo",
+                "num_casa": 22,
+                "colonia": "Valle Verde",
+                "referencia": "Al lado de la tienda de abarrotes"
+            }
+        ]
+    }
+]);
+
+
+
+
+
