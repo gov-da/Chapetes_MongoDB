@@ -1,5 +1,5 @@
 --almacen
-use chapetes;
+use chapetes2;
 
 select 
     id_almacen as id_almacen,
@@ -53,21 +53,15 @@ select
             m.id_magnitud,
             m.nombre_magnitud as medicion
         for json path
-    ) as magnitud,
+    ) as magnitudes,
     ( 
         select 
             p.nombre as nombre_proveedor,
             p.telefono,
-            p.calle,
-            p.numero,
-            p.colonia,
-            p.municipio,
-            (
-                select 
-                    tp.nombre_tipo,
-                    tp.descripcion
-                for json path
-            ) as tipo_proveedor
+            -- Ahora tipo_proveedor es un objeto con los campos nombre_tipo y descripcion
+            json_query('{"nombre_tipo": "' + tp.nombre_tipo + '", "descripcion": "' + tp.descripcion + '"}') as tipo_proveedor,
+            -- Domicilio como objeto JSON
+            json_query('{"calle": "' + p.calle + '", "numero": "' + cast(p.numero as varchar) + '", "colonia": "' + p.colonia + '", "municipio": "' + p.municipio + '"}') as domicilio
         for json path
     ) as proveedor
 from 
@@ -80,4 +74,7 @@ join
     magnitudes m on dc.id_magnitud = m.id_magnitud
 join 
     almacen a on dc.id_almacen = a.id_almacen
-for json path, root('detalle_compra');
+for json path;
+
+
+
