@@ -1,0 +1,91 @@
+use("chapetes")
+
+db.createCollection('detalle_compra', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación del objeto de usuarios',
+            required: ['_id', 'id_detalle_compra', 'id_almacen', 'cantidad', 'precio_magnitud', 'magnitud', 'proveedor'],
+            additionalProperties: false,
+            properties: {
+                _id: {
+                    bsonType: 'objectId'
+                },
+                id_detalle_compra: {
+                    bsonType: "int"
+                },
+                id_almacen: {
+                    bsonType: "int"
+                },
+                cantidad: {
+                    bsonType: "int"
+                },
+                precio_magnitud: {
+                    bsonType: "double"
+                },
+                magnitud: {
+                    bsonType: 'object',
+                    required: ['id_magnitud', 'medicion'],
+                    properties: {
+                        id_magnitud: {
+                            bsonType: "int"
+                        },
+                        medicion: {
+                            bsonType: "string",
+                            enum: ['Pieza', "Kilogramo", "Litro", "Gramo", "Mililitro", "Paquetes"]
+                        }
+                    }
+                },
+                proveedor: {
+                    bsonType: 'object',
+                   required: ['nombre', 'tipo_proveedor', 'domicilio', 'telefono'],
+                    properties: {
+                        nombre: {
+                            bsonType: "string",
+                        },
+                        tipo_proveedor: {
+                            bsonType: 'object',
+                            required: ['nombre_tipo', 'descripcion'],
+                            properties: {
+                                nombre_tipo: {
+                                    bsonType: "string",
+                                    enum: ["Verduras", "Desechables", "Carnes", "Lácteos", "Especias"]
+                                },
+                                descripcion: {
+                                    bsonType: "string"
+                                }
+                            }
+                        },
+                        domicilio: {
+                            bsonType: 'object',
+                            required: ['calle', 'numero', 'colonia', 'municipio'],
+                            properties: {
+                                calle: {
+                                    bsonType: "string"
+                                },
+                                numero: {
+                                    bsonType: "int"
+                                },
+                                colonia: {
+                                    bsonType: "string"
+                                },
+                                municipio: {
+                                    bsonType: "string"
+                                }
+                            }
+                        },
+                        telefono: {
+                            bsonType: "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+})
+
+
+db.clientes.createIndex(
+    { id_detalle_compra: 1 },
+    { unique: true }
+)

@@ -1,0 +1,75 @@
+use("chapetes")
+//db.Clientes.drop()
+
+db.createCollection('clientes', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación del objeto de clientes',
+            required: ['_id', "id_cliente", "nombre", "num_cel"],
+            properties: {
+                _id: {
+                    bsonType: 'objectId'
+                },
+                id_cliente: {
+                    bsonType: "int"
+                },
+                nombre: {
+                    bsonType: "string"
+                },
+                detalle_domicilios: {
+                    bsonType: 'object',
+                    required: ['id_cliente', 'domicilios'],
+                    properties: {
+                        id_cliente: {
+                            bsonType: "int"
+                        },
+                        domicilios: {
+                            bsonType: 'array',
+                            minItems: 1,
+                            items: {
+                                bsonType: 'object',
+                                required: ['id_domicilio', "calle", "num_casa", "colonia", "referencia"],
+                                properties: {
+                                    id_domicilio: {
+                                        bsonType: "int",
+                                    },
+                                    calle: {
+                                        bsonType: "string",
+                                    },
+                                    num_casa: {
+                                        bsonType: "string",
+                                    },
+                                    colonia: {
+                                        bsonType: "string",
+                                    },
+                                    referencia: {
+                                        bsonType: "string",
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                num_cel: {
+                    bsonType: "string"
+                }
+            }
+        }
+    }
+})
+
+
+use("chapetes")
+
+db.clientes.createIndex(
+    { id_domicilio: 1 },
+    { unique: true }
+)
+
+db.clientes.createIndex(
+    { id_cliente: 1 },
+    { unique: true }
+)
+
+

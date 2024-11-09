@@ -1,0 +1,57 @@
+use("chapetes")
+
+db.createCollection('almacen', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'Validación del objeto de usuarios',
+            required: ['_id', 'id_almacen', 'cantidad',"id_detalle_uso"],
+            additionalProperties: false,
+            properties: {
+                _id: {
+                    bsonType: 'objectId'
+                },
+                id_almacen: {
+                    bsonType: "int"
+                },
+                cantidad: {
+                    bsonType: "int"
+                },
+                magnitudes: {
+                    bsonType: 'object',
+                    required: ['medicion'],
+                    properties: {
+                        medicion: {
+                            bsonType: "string",
+                            enum: ['Pieza', "Kilogramo", "Litro", "Gramo", "Mililitro", "Paquetes"]
+                        }
+                    }
+                },
+                categoria_almacen: {
+                    bsonType: 'object',
+                    required: ['nombre_categoria'],
+                    properties: {
+                        medicion: {
+                            bsonType: "string",
+                            enum: ["Verduras", "Desechables", "Carnes", "Lácteos", " Especias"]
+                        }
+                    }
+                },
+                id_detalle_uso: {
+                    bsonType: "int"
+                },
+            }
+        }
+    }
+})
+
+
+
+
+use("Chapetes")
+
+
+db.almacen.createIndex(
+    { id_almacen: 1 },
+    { unique: true }
+) 
