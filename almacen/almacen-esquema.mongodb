@@ -1,11 +1,13 @@
 use("chapetes")
 
+//db.almacen.drop()
+
 db.createCollection('almacen', {
     validator: {
         $jsonSchema: {
             bsonType: 'object',
             title: 'Validación del objeto de usuarios',
-            required: ['_id', 'id_almacen', 'cantidad',"id_detalle_uso"],
+            required: ['_id', 'id_almacen', 'cantidad',],
             additionalProperties: false,
             properties: {
                 _id: {
@@ -38,7 +40,15 @@ db.createCollection('almacen', {
                     }
                 },
                 id_detalle_uso: {
-                    bsonType: "int"
+                    bsonType: "array",
+                    items: {
+                        bsonType: "object",
+                        properties: {
+                            id_detalle_uso: {
+                                bsonType:"int"
+                            }
+                        }
+                    }
                 },
             }
         }
@@ -48,7 +58,7 @@ db.createCollection('almacen', {
 
 
 
-use("Chapetes")
+use("chapetes")
 
 
 db.almacen.createIndex(
