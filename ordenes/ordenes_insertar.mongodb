@@ -1,0 +1,1079 @@
+
+// Usar la base de datos
+use('chapetes')
+
+db.ordenes.insertMany(
+    [
+        {
+            "id_orden": 1,
+            "id_cliente": 1,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Local"
+            },
+            "empleados": {
+                "nombre": "Juan Pérez Gómez",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-01-15"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 55,
+                    "productos": {
+                        "nombre": "Burrito de Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Burrito con carne de res deshebrada y salsa",
+                        "precio": 55,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 7,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco al Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de carne de res cocida a fuego lento con salsa",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 200,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 3,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "En preparación"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Listo para servir"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "En entrega"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Entregado"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Cancelado"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 2,
+            "id_cliente": 2,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Domicilio"
+            },
+            "empleados": {
+                "nombre": "María López Hernández",
+                "cargos": {
+                    "nombre_puesto": "Repartidor",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-02-20"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 20,
+                    "productos": {
+                        "nombre": "Coca-Cola Chica",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Refresco de cola en presentación pequeña",
+                        "precio": 20,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 25
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 55,
+                    "productos": {
+                        "nombre": "Burrito de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Burrito de cerdo marinado en adobo",
+                        "precio": 55,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 3,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de cerdo marinado en adobo y asado",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 50,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "En preparación"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Listo para servir"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 3,
+            "id_cliente": 3,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Domicilio"
+            },
+            "empleados": {
+                "nombre": "José Ramírez Sánchez",
+                "cargos": {
+                    "nombre_puesto": "Repartidor",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-06-15"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 25,
+                    "productos": {
+                        "nombre": "Agua de Horchata",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Bebida dulce de arroz con canela",
+                        "precio": 25,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20
+                    }
+                },
+                {
+                    "cantidad": 1,
+                    "precio": 90,
+                    "productos": {
+                        "nombre": "Orden de Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Porción de carne de res cocida a fuego lento",
+                        "precio": 90,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 10,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 8,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "En preparación"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Finalizado"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 4,
+            "id_cliente": 4,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Local"
+            },
+            "empleados": {
+                "nombre": "Ana García López",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-05-12"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 20,
+                    "productos": {
+                        "nombre": "Coca-Cola Chica",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Refresco de cola en presentación pequeña",
+                        "precio": 20,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 25
+                    }
+                },
+                {
+                    "cantidad": 1,
+                    "precio": 85,
+                    "productos": {
+                        "nombre": "Orden de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Porción de cerdo marinado en adobo",
+                        "precio": 85,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 10,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 10,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 7,
+                                "cantidad": 3,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                },
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "En preparación"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 5,
+            "id_cliente": 5,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Domicilio"
+            },
+            "empleados": {
+                "nombre": "Sofía Fernández Ruiz",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-09-10"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 25,
+                    "productos": {
+                        "nombre": "Agua de Horchata",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Bebida dulce de arroz con canela",
+                        "precio": 25,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20
+                    }
+                },
+                {
+                    "cantidad": 3,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco al Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de carne de res cocida a fuego lento con salsa",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 200,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 3,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 6,
+            "id_cliente": 6,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Local"
+            },
+            "empleados": {
+                "nombre": "Pedro González Castillo",
+                "cargos": {
+                    "nombre_puesto": "Repartidor",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-10-05"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 20,
+                    "productos": {
+                        "nombre": "Burrito de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Burrito de cerdo marinado en adobo",
+                        "precio": 55,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 1,
+                    "precio": 55,
+                    "productos": {
+                        "nombre": "Burrito de Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Burrito con carne de res deshebrada y salsa",
+                        "precio": 55,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 7,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de cerdo marinado en adobo y asado",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 50,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 55,
+                    "productos": {
+                        "nombre": "Burrito de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Burrito de cerdo marinado en adobo",
+                        "precio": 55,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 7,
+            "id_cliente": 7,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Domicilio"
+            },
+            "empleados": {
+                "nombre": "María López Hernández",
+                "cargos": {
+                    "nombre_puesto": "Repartidor",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-02-20"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 90,
+                    "productos": {
+                        "nombre": "Orden de Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Porción de carne de res cocida a fuego lento",
+                        "precio": 90,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 10,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 8,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 25,
+                    "productos": {
+                        "nombre": "Agua de Horchata",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Bebida dulce de arroz con canela",
+                        "precio": 25,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 8,
+            "id_cliente": 8,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Local"
+            },
+            "empleados": {
+                "nombre": "Juan Pérez Gómez",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-01-15"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 20,
+                    "productos": {
+                        "nombre": "Coca-Cola Chica",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Refresco de cola en presentación pequeña",
+                        "precio": 20,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 25
+                    }
+                },
+                {
+                    "cantidad": 1,
+                    "precio": 85,
+                    "productos": {
+                        "nombre": "Orden de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Porción de cerdo marinado en adobo",
+                        "precio": 85,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 10,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 10,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 7,
+                                "cantidad": 3,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 9,
+            "id_cliente": 9,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Local"
+            },
+            "empleados": {
+                "nombre": "Ana García López",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-05-12"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 25,
+                    "productos": {
+                        "nombre": "Agua de Horchata",
+                        "categorias": {
+                            "nombre_categoria": "Bebida"
+                        },
+                        "descripcion": "Bebida dulce de arroz con canela",
+                        "precio": 25,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 20
+                    }
+                },
+                {
+                    "cantidad": 2,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco al Barbacoa",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de carne de res cocida a fuego lento con salsa",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 200,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 3,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        },
+        {
+            "id_orden": 10,
+            "id_cliente": 10,
+            "tipo_orden": {
+                "nombre_tipo_orden": "Domicilio"
+            },
+            "empleados": {
+                "nombre": "Sofía Fernández Ruiz",
+                "cargos": {
+                    "nombre_puesto": "Mesero",
+                    "sueldo": 250
+                },
+                "fecha_contratacion": "2023-09-10"
+            },
+            "fecha": "2024-10-01",
+            "detalle_ordenes": [
+                {
+                    "cantidad": 1,
+                    "precio": 15,
+                    "productos": {
+                        "nombre": "Taco de Adobada",
+                        "categorias": {
+                            "nombre_categoria": "Comida"
+                        },
+                        "descripcion": "Taco de cerdo marinado en adobo y asado",
+                        "precio": 15,
+                        "disponibilidad": {
+                            "nombre_disponibilidad": "Disponible"
+                        },
+                        "cantidad_existencia": 50,
+                        "detalle_uso": [
+                            {
+                                "id_almacen": 1,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 2,
+                                "cantidad": 1,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 3,
+                                "cantidad": 2,
+                                "magnitudes": {
+                                    "medicion": "Gramo"
+                                }
+                            },
+                            {
+                                "id_almacen": 4,
+                                "cantidad": 5,
+                                "magnitudes": {
+                                    "medicion": "Litro"
+                                }
+                            },
+                            {
+                                "id_almacen": 5,
+                                "cantidad": 4,
+                                "magnitudes": {
+                                    "medicion": "Kilogramo"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "detalle_ordenes_estados": [
+                {
+                    "detalle_ordenes_estados": {
+                        "estados": {
+                            "nombre_estado": "Pedido recibido"
+                        },
+                        "hora": "15:54:36.0333333"
+                    }
+                }
+            ]
+        }
+    ]
+)

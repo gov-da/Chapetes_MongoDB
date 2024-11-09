@@ -1,0 +1,6 @@
+
+// Usar la base de datos
+use('chapetes')
+
+// Eliminar esquema
+db.ordenes.drop()

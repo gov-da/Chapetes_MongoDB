@@ -1,0 +1,165 @@
+use('chapetes');
+
+db.createCollection('ordenes', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['id_orden', 'id_cliente'],
+            properties: {
+                id_orden: {
+                    bsonType: 'int'
+                },
+                id_cliente: {
+                    bsonType: 'int'
+                },
+                tipo_orden: {
+                    bsonType: 'object',
+                    properties: {
+                        nombre_tipo_orden: {
+                            bsonType: 'string',
+                            enum: ['Local', 'Domicilio']
+                        }
+                    }
+                },
+                empleados: {
+                    bsonType: 'object',
+                    required: ['nombre'],
+                    properties: {
+                        nombre: {
+                            bsonType: 'string'
+                        },
+                        cargos: {
+                            bsonType: 'object',
+                            required: ['nombre_puesto', 'sueldo'],
+                            properties: {
+                                nombre_puesto: {
+                                    bsonType: 'string',
+                                },
+                                sueldo: {
+                                    bsonType: 'int',
+                                    minimum: 1
+                                }
+                            }
+                        },
+                        fecha_contratacion: {
+                            bsonType: 'string'
+                        }
+                    }
+                },
+                fecha: {
+                    bsonType: 'string'
+                },
+                detalle_ordenes: {
+                    bsonType: 'array',
+                    items: {
+                        bsonType: 'object',
+                        required: ['cantidad', 'precio'],
+                        properties: {
+                            cantidad: {
+                                bsonType: 'int',
+                                minimum: 1
+                            },
+                            precio: {
+                                bsonType: 'int',
+                                minimum: 1
+                            },
+                            productos: {
+                                bsonType: 'object',
+                                required: ['nombre', 'precio', 'cantidad_existencia'],
+                                properties: {
+                                    nombre: {
+                                        bsonType: 'string'
+                                    },
+                                    categorias: {
+                                        bsonType: 'object',
+                                        properties: {
+                                            nombre_categoria: {
+                                                bsonType: 'string',
+                                                enum: ['Comida', 'Bebida', 'Extra']
+                                            }
+                                        }
+                                    },
+                                    descripcion: {
+                                        bsonType: 'string'
+                                    },
+                                    precio: {
+                                        bsonType: 'int',
+                                        minimum: 1
+                                    },
+                                    disponibilidad: {
+                                        bsonType: 'object',
+                                        required: ['nombre_disponibilidad'],
+                                        properties: {
+                                            nombre_disponibilidad: {
+                                                bsonType: 'string',
+                                                enum: ['Disponible', 'Agotado']
+                                            }
+                                        }
+                                    },
+                                    cantidad_existencia: {
+                                        bsonType: 'int',
+                                        minimum: 0
+                                    },
+                                    detalle_uso: {
+                                        bsonType: 'array',
+                                        items: {
+                                            bsonType: 'object',
+                                            required: ['id_almacen', 'cantidad'],
+                                            properties: {
+                                                id_almacen: {
+                                                    bsonType: 'int'
+                                                },
+                                                cantidad: {
+                                                    bsonType: 'int',
+                                                    minimum: 1
+                                                },
+                                                magnitudes: {
+                                                    required: ['medicion'],
+                                                    bsonType: 'object',
+                                                    properties: {
+                                                        medicion: {
+                                                            bsonType: 'string'
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                },
+                detalle_ordenes_estados: {
+                    bsonType: 'array',
+                    items: {
+                        bsonType: 'object',
+                        properties: {
+                            estados: {
+                                bsonType: 'object',
+                                properties: {
+                                    nombre_estado: {
+                                        bsonType: 'string',
+                                        enum: [
+                                            'Pedido recibido',
+                                            'En preparación',
+                                            'Listo para servir',
+                                            'En entrega',
+                                            'Entregado',
+                                            'Finalizado',
+                                            'Cancelado'
+                                        ]
+                                    }
+                                }
+                            },
+                            hora: {
+                                bsonType: 'string'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+})
