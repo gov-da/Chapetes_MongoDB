@@ -1,0 +1,18 @@
+
+// Mostrar el número de orden y el total de la orden 
+use('chapetes')
+db.ordenes.find(
+    { id_orden: 7 }, //Filtro
+    { _id: 0 } //Proyección
+)
+
+// Contar el número de órdenes
+use('chapetes')
+db.ordenes.find().count()
+
+// Mostrar todos los datos de las órdenes
+use('chapetes')
+db.ordenes.find(
+    {},
+    { _id: 0 }
+)

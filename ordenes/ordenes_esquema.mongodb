@@ -163,3 +163,9 @@ db.createCollection('ordenes', {
         }
     }
 })
+
+// Crear indice por el campo id_orden
+db.usuarios.createIndex(
+    { id_orden: 1 }, // Será la llave del indice
+    { unique: true } // No acepta valores duplicados
+)
